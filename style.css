@@ -16,14 +16,17 @@ font-size:22px;
 letter-spacing:1px;
 }
 
-/* Hero section */
+/* Hero section (KLCC background) */
 
 .hero{
 background:
-linear-gradient(rgba(15, 18, 24, 0.55), rgba(15, 18, 24, 0.62)),
-url("images/residensi_ava_kenneth_poster.png");
-background-size: cover;
-background-position: center;
+linear-gradient(rgba(15,18,24,0.55), rgba(15,18,24,0.62)),
+url("https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=2000&q=80");
+background-size:cover;
+background-position:center;
+padding:120px 20px;
+text-align:center;
+color:white;
 }
 
 .hero h1{
@@ -108,7 +111,7 @@ flex-wrap:wrap;
 .card{
 background:white;
 width:260px;
-border-radius:15px;
+border-radius:20px;
 box-shadow:0 10px 25px rgba(0,0,0,0.1);
 overflow:hidden;
 }
@@ -119,19 +122,15 @@ overflow:hidden;
 height:200px;
 display:flex;
 align-items:flex-end;
-padding:15px;
+padding:20px;
 color:white;
+font-size:24px;
+font-weight:bold;
 background-size:cover;
 background-position:center;
 }
 
-.card-image h3{
-margin:0;
-font-size:24px;
-line-height:1.2;
-}
-
-/* AVA image */
+/* AVA property image */
 
 .ava-image{
 background:
@@ -150,6 +149,7 @@ padding:20px;
 .card p{
 color:#555;
 margin-bottom:20px;
+line-height:1.5;
 }
 
 /* Property info grid */
@@ -162,15 +162,15 @@ margin-bottom:20px;
 }
 
 .meta-grid div{
-background:#f1f1f1;
-padding:10px;
+background:#f2f2f2;
+padding:12px;
 border-radius:10px;
 font-size:14px;
 }
 
 .meta-grid strong{
 display:block;
-margin-bottom:3px;
+margin-bottom:4px;
 }
 
 /* Footer */
