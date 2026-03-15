@@ -19,13 +19,11 @@ letter-spacing:1px;
 /* Hero section */
 
 .hero{
-background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+background:
+linear-gradient(rgba(15, 18, 24, 0.55), rgba(15, 18, 24, 0.62)),
 url("https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=2000&q=80");
-background-size:cover;
-background-position:center;
-color:white;
-text-align:center;
-padding:120px 20px;
+background-size: cover;
+background-position: center;
 }
 
 .hero h1{
