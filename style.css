@@ -21,7 +21,7 @@ letter-spacing:1px;
 .hero{
 background:
 linear-gradient(rgba(15, 18, 24, 0.55), rgba(15, 18, 24, 0.62)),
-url("https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=2000&q=80");
+url("images/residensi_ava_kenneth_poster.png");
 background-size: cover;
 background-position: center;
 }
