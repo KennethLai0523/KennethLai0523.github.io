@@ -107,18 +107,70 @@ flex-wrap:wrap;
 
 .card{
 background:white;
-padding:25px;
 width:260px;
 border-radius:15px;
 box-shadow:0 10px 25px rgba(0,0,0,0.1);
+overflow:hidden;
 }
 
-.card h3{
-margin-bottom:10px;
+/* Card image */
+
+.card-image{
+height:200px;
+display:flex;
+align-items:flex-end;
+padding:15px;
+color:white;
+background-size:cover;
+background-position:center;
+}
+
+.card-image h3{
+margin:0;
+font-size:24px;
+line-height:1.2;
+}
+
+/* AVA image */
+
+.ava-image{
+background:
+linear-gradient(rgba(15,18,24,0.35), rgba(15,18,24,0.55)),
+url("images/residensi_ava_kenneth_poster.png");
+background-size:cover;
+background-position:center;
+}
+
+/* Card content */
+
+.card-content{
+padding:20px;
 }
 
 .card p{
 color:#555;
+margin-bottom:20px;
+}
+
+/* Property info grid */
+
+.meta-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+margin-bottom:20px;
+}
+
+.meta-grid div{
+background:#f1f1f1;
+padding:10px;
+border-radius:10px;
+font-size:14px;
+}
+
+.meta-grid strong{
+display:block;
+margin-bottom:3px;
 }
 
 /* Footer */
