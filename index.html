@@ -1,42 +1,432 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Kenneth Lai | Property Agent</title>
-<link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kenneth Lai | Residensi AVA Specialist</title>
+  <meta name="description" content="Kenneth Lai - Residensi AVA @ Kiara Bay specialist. Buy, sell and rent property in Kepong, Kuala Lumpur." />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f3ef;
+      color: #1f1f1f;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(20, 20, 20, 0.45), rgba(20, 20, 20, 0.55)),
+        url("https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .hero h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+      color: #f4d7a1;
+      font-weight: 600;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      font-size: 18px;
+      color: #f3f3f3;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-weight: bold;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: #d4a24c;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #bd8d3f;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.14);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.22);
+    }
+
+    .hero-info {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .hero-info div {
+      background: rgba(255,255,255,0.12);
+      padding: 12px 18px;
+      border-radius: 14px;
+      min-width: 170px;
+    }
+
+    .section {
+      max-width: 1180px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: 38px;
+      color: #1a1a1a;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 48px;
+      color: #666;
+      font-size: 17px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 22px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #202020;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, #1f2430, #2f3441);
+      color: white;
+    }
+
+    .highlight h3 {
+      color: #f4d7a1;
+    }
+
+    .listing-card {
+      max-width: 820px;
+      margin: auto;
+      background: white;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.10);
+    }
+
+    .listing-top {
+      background:
+        linear-gradient(rgba(10,10,10,0.28), rgba(10,10,10,0.4)),
+        url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80");
+      background-size: cover;
+      background-position: center;
+      min-height: 320px;
+      display: flex;
+      align-items: end;
+      padding: 28px;
+      color: white;
+    }
+
+    .listing-top h3 {
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .listing-body {
+      padding: 30px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .stat-box {
+      background: #f7f4ee;
+      padding: 18px;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: 20px;
+      color: #1f1f1f;
+      margin-bottom: 4px;
+    }
+
+    .listing-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+      color: #444;
+    }
+
+    .listing-features div {
+      background: #faf8f4;
+      padding: 14px 16px;
+      border-radius: 14px;
+    }
+
+    .contact-section {
+      background: #171717;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .contact-section h2 {
+      font-size: 40px;
+      margin-bottom: 14px;
+    }
+
+    .contact-section p {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      color: #d6d6d6;
+    }
+
+    .contact-box {
+      max-width: 720px;
+      margin: 30px auto 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .contact-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 22px;
+      border-radius: 18px;
+    }
+
+    footer {
+      background: #101010;
+      color: #aaa;
+      text-align: center;
+      padding: 22px 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero h2 {
+        font-size: 22px;
+      }
+
+      .section-title,
+      .contact-section h2 {
+        font-size: 30px;
+      }
+
+      .listing-top h3 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
 <body>
 
-<header>
-<h1>Kenneth Lai</h1>
-<p>Residensi AVA Project Specialist</p>
-<p>One Maker Realty Group</p>
-</header>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="tag">AVA Project Specialist • One Maker Realty Group</div>
+      <h1>Kenneth Lai</h1>
+      <h2>Residensi AVA @ Kiara Bay Specialist</h2>
+      <p>
+        Helping owners, buyers and tenants with sub-sale, rental and property enquiries
+        around Kiara Bay, Kepong and nearby Kuala Lumpur areas.
+      </p>
 
-<section class="hero">
-<h2>Residensi AVA @ Kiara Bay</h2>
-<p>Modern serviced residence next to Kepong Metropolitan Lake</p>
-<button onclick="contact()">Contact Now</button>
-</section>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="https://wa.me/60166287357" target="_blank">WhatsApp Me</a>
+        <a class="btn btn-secondary" href="#listing">View Featured Unit</a>
+      </div>
 
-<section class="listing">
-<h2>Featured Property</h2>
+      <div class="hero-info">
+        <div><strong>Location</strong><br>Kepong, Kuala Lumpur</div>
+        <div><strong>Focus</strong><br>Buy • Sell • Rent</div>
+        <div><strong>Contact</strong><br>016-628 7357</div>
+      </div>
+    </div>
+  </section>
 
-<div class="card">
-<h3>Residensi AVA</h3>
-<p>3 Bedroom • 2 Bathroom</p>
-<p>950 sqft</p>
-<p>KL Skyline View</p>
-</div>
+  <section class="section">
+    <h2 class="section-title">Why Work With Me</h2>
+    <p class="section-subtitle">
+      I focus on Residensi AVA and surrounding projects, helping clients market their units professionally
+      and connect with serious buyers and tenants faster.
+    </p>
 
-</section>
+    <div class="about-grid">
+      <div class="card">
+        <h3>Project-Focused Marketing</h3>
+        <p>I specialise in project-specific marketing so your unit gets more relevant exposure instead of generic posting.</p>
+      </div>
+      <div class="card highlight">
+        <h3>Buy • Sell • Rent</h3>
+        <p>Whether you are looking to sell, rent out your unit, or find the right property, I can help you through the process.</p>
+      </div>
+      <div class="card">
+        <h3>Fast Enquiry Response</h3>
+        <p>Direct WhatsApp contact makes it easier for owners and prospects to reach me quickly for viewings and details.</p>
+      </div>
+    </div>
+  </section>
 
-<footer>
-<p>Contact: 016-628 7357</p>
-<p>© Kenneth Lai Property</p>
-</footer>
+  <section class="section" id="listing">
+    <h2 class="section-title">Featured Property</h2>
+    <p class="section-subtitle">
+      A sample featured unit section for Residensi AVA. You can later change this to your latest listing anytime.
+    </p>
 
-<script src="script.js"></script>
+    <div class="listing-card">
+      <div class="listing-top">
+        <div>
+          <h3>Residensi AVA @ Kiara Bay</h3>
+          <p>Modern serviced residence next to Kepong Metropolitan Lake</p>
+        </div>
+      </div>
+
+      <div class="listing-body">
+        <div class="stats">
+          <div class="stat-box">
+            <strong>3</strong>
+            Bedrooms
+          </div>
+          <div class="stat-box">
+            <strong>2</strong>
+            Bathrooms
+          </div>
+          <div class="stat-box">
+            <strong>950 sqft</strong>
+            Built-up
+          </div>
+          <div class="stat-box">
+            <strong>2</strong>
+            Car Parks
+          </div>
+        </div>
+
+        <div class="listing-features">
+          <div>KL skyline view</div>
+          <div>Move-in condition</div>
+          <div>Suitable for own stay or investment</div>
+          <div>Near Kepong Metropolitan Lake</div>
+          <div>Convenient access to Desa ParkCity & Sri Damansara</div>
+          <div>Ideal for sale or rental enquiries</div>
+        </div>
+
+        <div style="margin-top: 28px; text-align: center;">
+          <a class="btn btn-primary" href="https://wa.me/60166287357" target="_blank">Enquire This Unit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <h2>Let’s Connect</h2>
+    <p>
+      Looking to buy, sell or rent at Residensi AVA or nearby projects?
+      Reach out to me directly for more information and viewing arrangements.
+    </p>
+
+    <div class="hero-buttons">
+      <a class="btn btn-primary" href="https://wa.me/60166287357" target="_blank">Chat on WhatsApp</a>
+    </div>
+
+    <div class="contact-box">
+      <div class="contact-item">
+        <strong>Kenneth Lai</strong><br>
+        Real Estate Negotiator
+      </div>
+      <div class="contact-item">
+        <strong>Phone</strong><br>
+        016-628 7357
+      </div>
+      <div class="contact-item">
+        <strong>Company</strong><br>
+        One Maker Realty Group
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Kenneth Lai Property | Residensi AVA @ Kiara Bay Specialist
+  </footer>
 
 </body>
 </html>
