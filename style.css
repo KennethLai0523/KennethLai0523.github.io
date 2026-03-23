@@ -1,202 +1,1360 @@
-body{
-font-family: Arial, Helvetica, sans-serif;
-margin:0;
-background:#f5f5f5;
-color:#333;
-}
-
-/* Header */
-
-header{
-background:#111;
-color:white;
-padding:25px;
-text-align:center;
-font-size:22px;
-letter-spacing:1px;
-}
-
-/* Hero section (KLCC background) */
-
-.hero{
-background:
-linear-gradient(rgba(15,18,24,0.55), rgba(15,18,24,0.62)),
-url("https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=2000&q=80");
-background-size:cover;
-background-position:center;
-padding:120px 20px;
-text-align:center;
-color:white;
-}
-
-.hero h1{
-font-size:60px;
-margin-bottom:10px;
-}
-
-.hero h2{
-color:#f3c26b;
-font-size:28px;
-margin-bottom:20px;
-}
-
-.hero p{
-max-width:700px;
-margin:auto;
-font-size:18px;
-line-height:1.6;
-margin-bottom:30px;
-}
-
-/* Button */
-
-button{
-padding:14px 30px;
-background:#d6a84f;
-color:white;
-border:none;
-font-size:16px;
-cursor:pointer;
-border-radius:30px;
-}
-
-button:hover{
-background:#bf913f;
-}
-
-/* Info boxes */
-
-.info{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-margin-top:40px;
-}
-
-.box{
-background:rgba(255,255,255,0.15);
-padding:20px;
-border-radius:15px;
-width:200px;
-backdrop-filter:blur(6px);
-}
-
-.box strong{
-display:block;
-margin-bottom:6px;
-}
-
-/* Listings */
-
-.listing{
-padding:60px 20px;
-text-align:center;
-}
-
-.listing h2{
-font-size:36px;
-margin-bottom:40px;
-}
-
-/* Cards */
-
-.card-container{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-}
-
-.card{
-background:white;
-width:260px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-overflow:hidden;
-}
-
-/* Card image */
-
-.card-image{
-height:200px;
-display:flex;
-align-items:flex-end;
-padding:20px;
-color:white;
-font-size:24px;
-font-weight:bold;
-background-size:cover;
-background-position:center;
-}
-
-/* AVA property image */
-
-.ava-image{
-background:
-linear-gradient(rgba(15,18,24,0.35), rgba(15,18,24,0.55)),
-url("images/residensi_ava_kenneth_poster.png");
-background-size:cover;
-background-position:center;
-}
-
-/* Card content */
-
-.card-content{
-padding:20px;
-}
-
-.card p{
-color:#555;
-margin-bottom:20px;
-line-height:1.5;
-}
-
-/* Property info grid */
-
-.meta-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-margin-bottom:20px;
-}
-
-.meta-grid div{
-background:#f2f2f2;
-padding:12px;
-border-radius:10px;
-font-size:14px;
-}
-
-.meta-grid strong{
-display:block;
-margin-bottom:4px;
-}
-
-/* Footer */
-
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:25px;
-margin-top:40px;
-}
-
-/* WhatsApp floating button */
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-width:55px;
-height:55px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:26px;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
-}
+const LISTINGS = [
+  {
+    "id": 1774280556824,
+    "type": "listing",
+    "category": "Industrial",
+    "title": "Industrial Land + Factory ",
+    "location": "Klang",
+    "price": "For sale : RM 48 Million ",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "4 acre",
+    "furnishing": "Built-up: warehouse + office",
+    "tenure": "-",
+    "description": "• Land Area: 4 acre\n• Built-up: Warehouse + Office\n• Ceiling Height: 40 ft\n• Power Supply: 5 kV\n• Floor Loading: Up to 4 tons\n\n💰 Asking Price: RM48 Million",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Klangfactory.jpeg"
+    ],
+    "privateNotes": "En M 38 Mil bungalow bukit tunky\n+60 11-2786 9873",
+    "status": "Available"
+  },
+  {
+    "id": 1774113144936,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Shoplot @Ground floor",
+    "location": "Kepong, Kuala Lumpur",
+    "price": "For Sale : RM 2.5 Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1700 sqft",
+    "furnishing": "-",
+    "tenure": "Leasehold (Remaining 90 years)",
+    "description": "🏢 Property Details:\n• Property Type: Shop Lot\n• Tenure: Leasehold (Remaining 90 years)\n• Land Title: Non-Bumi Lot\n• Facing main road (high visibility)\n• Suitable for investment or own business\n\n🚀 Highlights:\n• Main road frontage with high exposure\n• Surrounded by residential catchment\n• Good rental return\n• Established commercial area in Kepong",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Kepongshopaeon2storey.jpeg"
+    ],
+    "privateNotes": "Ideal LED Jeffrey kepong fortune perdana 2.45mil\n+60 12-336 8808",
+    "status": "Available"
+  },
+  {
+    "id": 1774112807183,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "KL Trillion Office building",
+    "location": "City Centre, KL",
+    "price": "For Sale : RM 1.1 Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1055 sqft",
+    "furnishing": "Fully renovated",
+    "tenure": "Freehold",
+    "description": "High floor unit with excellent natural lighting, offering a quiet and comfortable working environment. Strategically located in KL City Centre, providing easy access to amenities, public transport, and major business hubs. Ideal for companies seeking a prestigious office address with a productive atmosphere.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "KL_Trillion_office (1).jpeg",
+      "KL_Trillion_office (2).jpeg",
+      "KL_Trillion_office (3).jpeg",
+      "KL_Trillion_office (4).jpeg",
+      "KL_Trillion_office (5).jpeg",
+      "KL_Trillion_office (6).jpeg",
+      "KL_Trillion_office (7).jpeg"
+    ],
+    "privateNotes": "High zone\ntan KL trillion office building @ highzone\n+60 11-2627 2966",
+    "status": "Available"
+  },
+  {
+    "id": 1774112151050,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Kota Raya shopping complex ",
+    "location": "Bukit Bintang, Kuala Lumpur",
+    "price": "For Sale : RM 810k",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "approx 1000 sqft ",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "📝 Description:\n• Kota Raya shop for sale\n• 1st Floor unit\n• Size: approx 1000 sqft\n• Currently tenanted (good for investment)\n• Freehold property\n\n🏢 Property Details:\n• Property Type: Retail Space\n• Tenure: Freehold\n• Land Title: Non-Bumi Lot\n\n🚀 Highlights:\n• Prime location in Bukit Bintang\n• High foot traffic area\n• Suitable for investment or own business\n\n🛗 Facilities:\n• Lift access",
+    "whatsapp": "60166287357",
+    "photos": [
+      "KotaRaya.jpeg"
+    ],
+    "privateNotes": "Nicole Kew Kota raya shopping complex (talk on comission 2%)\n+60 12-273 5489",
+    "status": "Available"
+  },
+  {
+    "id": 1774111804163,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "2 storey shoplot ",
+    "location": "Taman desa @Happy garden",
+    "price": "For Sale : RM 1.7 Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1400 sqft",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "• Double storey shop located at Happy Garden\n• Size: 20 x 70 (1,400 sqft)\n• Good location with road frontage (facing road)\n• Suitable for own use or investment\n",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Tamandesashoplothappygarden.jpeg"
+    ],
+    "privateNotes": "Zuzumiki taman desa happy garden\n+60 18-238 6323\n\ncomission based on over 1.6 mil ",
+    "status": "Available"
+  },
+  {
+    "id": 1774089799365,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Residensi Ava apartment",
+    "location": "Kiara Bay, Kepong",
+    "price": "For Rent : RM 2,800/month",
+    "rooms": "4",
+    "bathrooms": "2",
+    "builtup": "1285 sqft",
+    "furnishing": "Partly Furnished",
+    "tenure": "Leasehold",
+    "description": "Residensi AVA Kiara Bay offers a balanced living environment within a rapidly developing waterfront township. This unit features a well-designed layout with 4 bedrooms and 2 bathrooms, suitable for families or investors seeking long-term value.\n\nFully equipped with modern partial furnishings, including lighting, air-conditioning, ceiling fans, and water heaters, ensuring comfort and immediate move-in readiness.\n\nCurrently tenanted, making it an attractive option for investors looking for instant rental yield. The development is surrounded by lifestyle amenities, upcoming retail components, and enjoys convenient connectivity to major roads and key areas such as Kepong, Segambut, and Mont Kiara.\n\nA solid opportunity to secure a unit in a growing location with strong future appreciation potential.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "ResidensiAva_typeE.jpeg"
+    ],
+    "privateNotes": "Rixe residensi ava type E\n+60 16-635 5733\n\nMorris residensi ava type E\n+60 12-681 1109\n\nChloe Chew residensi ava part furnished\n+60 17-680 2949",
+    "status": "Available"
+  },
+  {
+    "id": 1774088471093,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Residensi Ava apartment",
+    "location": "Kiara Bay, Kepong",
+    "price": "For Sale : RM 850,000",
+    "rooms": "4",
+    "bathrooms": "2",
+    "builtup": "1285 sqft",
+    "furnishing": "Partly furnished",
+    "tenure": "Leasehold",
+    "description": "AVA Kiara Bay is a modern residential development located in a well-connected and growing area. This unit offers a practical layout with 4 bedrooms and 2 bathrooms, suitable for family living or investment. Currently tenanted, providing immediate rental income.\n\nComes modern partially furnished with lighting, air-conditioning units, ceiling fans, and water heaters, along with 2 carparks.\n\nConvenient access to nearby amenities, highways, and lifestyle hubs, making it an ideal choice for both own stay and investment.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "ResidensiAvaBlockBNo1 (1).jpeg",
+      "ResidensiAvaBlockBNo1 (2).jpeg",
+      "ResidensiAvaBlockBNo1 (3).jpeg",
+      "ResidensiAvaBlockBNo1 (4).jpeg",
+      "ResidensiAvaBlockBNo1 (5).jpeg",
+      "ResidensiAvaBlockBNo1 (6).jpeg",
+      "ResidensiAvaBlockBNo1 (7).jpeg"
+    ],
+    "privateNotes": "rachellyho kiara bay for sale 850k partly furnished\n\n+60 19-352 2340",
+    "status": "Available"
+  },
+  {
+    "id": 1774080791931,
+    "type": "listing",
+    "category": "Land",
+    "title": "Residential land(Top Hill)",
+    "location": "Bukit Tunku, Kuala Lumpur",
+    "price": "For Sale : RM 9-11Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "0.5 Acre",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "📍 Bukit Tunku – Prime Residential Address in Kuala Lumpur\n\nBukit Tunku, also known as Kenny Hills, is one of Kuala Lumpur’s most prestigious and exclusive residential enclaves. Surrounded by lush greenery and low-density developments, it offers a peaceful environment while still being just minutes away from the city centre.\n\nThis area is highly sought after for its large land sizes, privacy, and premium neighbourhood profile, making it ideal for luxury bungalow living or long-term investment. With excellent accessibility to Jalan Duta, Mont Kiara, and KL City Centre, Bukit Tunku combines convenience with exclusivity.\n\nNearby amenities include international schools, embassies, lifestyle hubs, and established commercial areas, ensuring both comfort and strong future value appreciation.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Bukit_tunku_top_hill.jpeg"
+    ],
+    "privateNotes": "10.9million top of bukit tunku\n\nrightbugger@gmail.com 10.9Mil Bukit Tunku residential land for sale mudah\n\n+60 12-222 2209\n\nMain gate facing East South , larger at back",
+    "status": "Available"
+  },
+  {
+    "id": 1774079614923,
+    "type": "listing",
+    "category": "Land",
+    "title": "Development Land",
+    "location": "Titiwangsa, Kuala Lumpur",
+    "price": "For Sale : RM 40-60Million",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "3-5acre",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "📍 Titiwangsa – Prime Development Land For Sale\n\nStrategically located in the fast-growing Titiwangsa area, this development land presents a rare opportunity for investors and developers to secure a valuable land bank within Kuala Lumpur city.\n\nSurrounded by established residential neighbourhoods, commercial hubs, and ongoing developments, the site offers strong potential for residential, mixed-use, or commercial projects. Its central location ensures excellent connectivity to major roads, public transport, and key city landmarks.\n\nWith increasing demand for city living and limited land availability in prime KL locations, this property holds strong upside for both immediate development and long-term capital appreciation.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Titiwangsa (2).jpeg"
+    ],
+    "privateNotes": "bukit tunku 8.8million and 58million KL city resi land and commercial land 138million\n+60 11-5554 3886",
+    "status": "Available"
+  },
+  {
+    "id": 1774078213057,
+    "type": "listing",
+    "category": "Land",
+    "title": "Residential Land",
+    "location": "Bukit Tunku, Kuala Lumpur",
+    "price": "For Sale : RM 8-10Million",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "0.6-0.8acre",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "📍 Bukit Tunku – Exclusive Living in Kuala Lumpur\n\nBukit Tunku (Kenny Hills) is one of Kuala Lumpur’s most established luxury residential areas, known for its exclusivity, greenery, and spacious land parcels. The area is home to high-profile residents, diplomats, and premium developments, making it one of the most sought-after addresses in the city.\n\nSurrounded by mature trees and a serene environment, Bukit Tunku offers a rare balance of privacy and accessibility. Despite its tranquil setting, it is strategically located just a short drive to KL City Centre, Mont Kiara, and key highways.\n\nWith limited land supply and consistent demand, properties in Bukit Tunku hold strong value and long-term appreciation potential. It is an ideal choice for those looking to build a dream bungalow or secure a prime land bank in a prestigious location.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Bukit_tunku.jpeg"
+    ],
+    "privateNotes": "0.73 acre selling at 8.8million from mudah\nbukit tunku 8.8million and 58million KL city resi land and commercial land 138million\n+60 11-5554 3886",
+    "status": "Available"
+  },
+  {
+    "id": 1774063304003,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Jalan TunKu Abdul Rahman",
+    "location": "beside KL tower, Chowkit , KL city centre",
+    "price": "For Sale : RM 12Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "5,000 - 7,000 sqft",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "📍 Jalan Tunku Abdul Rahman – 3 Storey Shoplot (Main Road Facing)\n\nLocated along the highly sought-after Jalan Tunku Abdul Rahman, this 3-storey shoplot enjoys excellent visibility and strong foot traffic, making it ideal for retail, F&B, showroom, or office use.\n\nStrategically positioned facing the main road, the property benefits from constant exposure and easy accessibility, surrounded by established commercial activities, shopping areas, and dense population catchment.\n\nThis is a prime opportunity for both own-use and investment, with strong rental demand and long-term capital appreciation in one of Kuala Lumpur’s most iconic commercial zones.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "KL_tower_beside.jpeg"
+    ],
+    "privateNotes": "💰 Rental income approx. RM40,000/month , \nJalan Tuanku Abdul Rahman – For Sale\n\n🧘🏻‍♂️ jalan tunku abdul rahman KL beside KL tower for sale 11.8mil\n+60 12-338 9321",
+    "status": "Available"
+  },
+  {
+    "id": 1774028640623,
+    "type": "listing",
+    "category": "New Project",
+    "title": "Galaxy Walk @ Puncak Alam (Retail Hub / Lifestyle Mall)",
+    "location": "Puncak Alam, Selangor",
+    "price": "For Sale : From 3mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1,800 - 6,800 sqft",
+    "furnishing": "-",
+    "tenure": "Strata Commercial",
+    "description": "Galaxy Walk is a premium integrated retail hub within the Galaxy Exchange masterplan, designed as the central lifestyle and commercial destination in Puncak Alam.\n\nFeaturing only 20 exclusive bungalow-style retail units, the development offers a pedestrian-friendly environment with shaded walkways, open courtyards, and green spaces, creating a unique shopping and dining experience.\n\nStrategically positioned as the primary retail pulse for the surrounding precinct, Galaxy Walk is supported by strong residential catchment, universities, and growing population, making it ideal for F&B, café, lifestyle brands, and retail concepts.\n\nAnchored by Bizmilla Wedding Hall (up to 1,000 pax capacity) and Bgrocer supermarket, the project benefits from consistent footfall, event-driven traffic, and strong daily visitation, enhancing business sustainability and long-term value.\n\nWith upcoming infrastructure such as DASH Highway extension and future ECRL station, Galaxy Walk is set to become a key commercial and lifestyle destination in the area.\n\nSuitable for own business or investment.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "GalaxyWalk (1).jpeg",
+      "GalaxyWalk (2).jpeg",
+      "GalaxyWalk (3).jpeg",
+      "GalaxyWalk (4).jpeg",
+      "GalaxyWalk (5).jpeg",
+      "GalaxyWalk (6).jpeg"
+    ],
+    "privateNotes": "Galaxy walk(shopping mall at centre for retail) & galaxy avenue(shoplot), company new project",
+    "status": "Available"
+  },
+  {
+    "id": 1774027931295,
+    "type": "listing",
+    "category": "New Project",
+    "title": "Galaxy Avenue @ Puncak Alam (2-Storey Shoplot)",
+    "location": "Puncak Alam, Selangor",
+    "price": "For Sale : RM 700 - 850 psf, From 2 Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "2930 - 3765 sqft",
+    "furnishing": "-",
+    "tenure": "Leasehold (Individual Title)",
+    "description": "Galaxy Avenue is a brand new 2-storey commercial shoplot development strategically located in the heart of Puncak Alam. Positioned along the main road (Persiaran Mokhtar Dahari), the project offers excellent visibility, accessibility, and strong business exposure.\n\nBuilt-ups range from 2,930 sqft to 3,765 sqft, suitable for F&B, retail, office, and lifestyle businesses. Designed with modern architecture, full glass frontage, and double-volume ceiling, allowing flexible layout and strong branding presence.\n\nSurrounded by a rapidly growing township with high population catchment, nearby universities, and established residential areas, this development offers strong rental demand and long-term capital appreciation potential.\n\nExcellent connectivity via major highways including LATAR, DASH, GCE, and upcoming ECRL station, making it a strategic commercial hub for future growth.\n\nSuitable for own business use or investment.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Galaxy_Avenue (1).jpeg",
+      "Galaxy_Avenue (2).jpeg",
+      "Galaxy_Avenue (3).jpeg",
+      "Galaxy_Avenue (4).jpeg",
+      "Galaxy_Avenue (5).jpeg",
+      "Galaxy_Avenue (6).jpeg",
+      "Galaxy_Avenue (7).jpeg",
+      "Galaxy_Avenue (8).jpeg",
+      "Galaxy_Avenue (9).jpeg",
+      "Galaxy_Avenue (10).jpeg",
+      "Galaxy_Avenue (11).jpeg",
+      "Galaxy_Avenue (12).jpeg"
+    ],
+    "privateNotes": "Galaxy avenue whatsapp group company new project",
+    "status": "Available"
+  },
+  {
+    "id": 1774021203402,
+    "type": "listing",
+    "category": "Land",
+    "title": "Taman desa",
+    "location": "Taman desa, Old Klang Road, Kuala Lumpur",
+    "price": "For Sale : RM 6mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "16,000 sqft",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "Development Potential:\n• DBKL approval for development (up to 5-storey / approx. 10 units)\n• Suitable for bungalow project or boutique development\n• Tested solid ground – suitable for construction without piling\n\n• Approved architect & engineer plans available\n\nSelling Price: RM6,000,000",
+    "whatsapp": "60166287357",
+    "photos": [
+      "tamandesaslopeland.jpeg"
+    ],
+    "privateNotes": "slope land 11k flat + 5k slope \n\numtc my taman desa 11000 sqft + 5000 sqft total 16000 sqft freehold\n\n+60 19-340 3093\n\nfacing north west north east ",
+    "status": "Available"
+  },
+  {
+    "id": 1774020111969,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Shoplot Ground + 1st Floor",
+    "location": "Pudu, KL",
+    "price": "For Sale : RM 3.8 Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "8,000 - 10,000 sqft",
+    "furnishing": "-",
+    "tenure": "Leasehold (approx. 50 years remaining)",
+    "description": "Ground + 1st Floor Shoplot For Sale – KL\n\n✔ Tenanted unit (good for investment)\n✔ Ground Floor Rental: RM12,000/month\n✔ 1st Floor Rental: RM4,500/month\n✔ Total Rental: RM16,500/month",
+    "whatsapp": "60166287357",
+    "photos": [
+      "PudushoplotNo1.jpeg"
+    ],
+    "privateNotes": "Pudu KL, \nFoo CC PUDU , KL shoplot mudah : https://www.mudah.my/for-sale-114157657.htm\n+60 12-370 9023",
+    "status": "Available"
+  },
+  {
+    "id": 1774018764898,
+    "type": "listing",
+    "category": "Land",
+    "title": "Kampung Sungai Penchala",
+    "location": "Mont Kiara, KL",
+    "price": "For Sale : RM 3.93Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1.64 acres (≈ 71,450 sqft)",
+    "furnishing": "-",
+    "tenure": "Malay Reserve",
+    "description": "Malay Reserved Land For Sale – Kg Sungai Penchala, Kuala Lumpur\n\n✔ Land Size: 1.64 acres (≈ 71,450 sqft)\n✔ Approx. RM55 psf\n✔ Survey-verified cadastral lot (NDCDB)\n✔ Clear boundary & ownership\n\nLocation Highlights:\n• Strategic KL location\n• 5–10 mins to TTDI, Damansara Perdana, Mont Kiara & One Utama\n• Peaceful kampung environment surrounded by greenery\n• Close to major amenities & city access\n\nSpecial Features:\n• Existing natural ground water source\n• Suitable for irrigation or private use\n• Flat & usable land condition (agriculture – fruit trees/rubber)\n\nSuitable for:\n• Private bungalow / villa estate\n• Boutique residential development\n• Long-term land banking",
+    "whatsapp": "60166287357",
+    "photos": [
+      "mont_kiara_land_sale_no1.jpg"
+    ],
+    "privateNotes": "Malay reserve \nAshraf Faris Malay reserve mont kiara kampung sungai penchala 3.93mil\n+60 12-291 3253",
+    "status": "Available"
+  },
+  {
+    "id": 1774017588320,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Puncak Seri Kelana Condo | Near LRT | Fully Furnished",
+    "location": "Ara Damansara, Selangor",
+    "price": "For Rent : RM 2600/month",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "1,100 sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "Leasehold",
+    "description": "Puncak Seri Kelana Condominium @ Ara Damansara\n\n✔ 3 Bedrooms 2 Bathrooms\n✔ 2 Car Parks\n✔ 1,100 sqft\n✔ Fully Furnished\n✔ High Floor\n\nLocation Highlights:\n• Walking distance to LRT Ara Damansara\n• Easy access to major highways\n• Mature and convenient neighbourhood\n\nFacilities:\n• Swimming Pool\n• Gymnasium\n• Playground\n• 24-hour Security\n• Parking & Minimart\n\nSuitable for family, working adults, or students.\n\nRental: RM2,600/month\n(Option to negotiate if only 1 car park required)\n\nFor viewing & details, contact:\nKenneth Lai – 0166287357",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Ara DamansaraNo1 (1).jpeg",
+      "Ara DamansaraNo1 (2).jpeg",
+      "Ara DamansaraNo1 (3).jpeg",
+      "Ara DamansaraNo1 (4).jpeg",
+      "Ara DamansaraNo1 (5).jpeg",
+      "Ara DamansaraNo1 (6).jpeg",
+      "Ara DamansaraNo1 (7).jpeg",
+      "Ara DamansaraNo1 (1).jpeg",
+      "Ara DamansaraNo1 (8).jpeg",
+      "Ara DamansaraNo1 (9).jpeg",
+      "Ara DamansaraNo1 (10).jpeg",
+      "Ara DamansaraNo1 (11).jpeg",
+      "Ara DamansaraNo1 (12).jpeg",
+      "Ara DamansaraNo1 (13).jpeg"
+    ],
+    "privateNotes": "Carl ara damansara for rent\n+60 17-716 5153",
+    "status": "Available"
+  },
+  {
+    "id": 1774007330193,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Commercial office building",
+    "location": "Old Klang Road, Kuala Lumpur",
+    "price": "For Sale : RM 8Mil ",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "10,000 sqft - 15,000 sqft",
+    "furnishing": "-",
+    "tenure": "Leasehold 70years",
+    "description": "Facing main road, fully partitioned\n",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Old_klang_road (1).jpeg",
+      "Old_klang_road (2).jpeg",
+      "Old_klang_road (3).jpeg"
+    ],
+    "privateNotes": "Old klang road from mudah\n\nAlan Lee Commercial office 8 million (waiting for photo without watermark)\n\n+60 19-663 5154",
+    "status": "Available"
+  },
+  {
+    "id": 1774005605425,
+    "type": "listing",
+    "category": "New Project",
+    "title": "Leverra @ Sri Damansara",
+    "location": "Sri Damansara, Kuala Lumpur",
+    "price": "For sale : From 4XX,XXX",
+    "rooms": "2-4",
+    "bathrooms": "2-3",
+    "builtup": "725 - 1150 sqft",
+    "furnishing": "Empty - Fully Furnished",
+    "tenure": "Freehold",
+    "description": "Leverra @ Sri Damansara is a modern high-rise residence strategically located near Desa ParkCity and Sungai Buloh. Surrounded by vibrant retail, lifestyle conveniences, and excellent connectivity, this project offers strong potential for both own stay and investment.\n\nWalking distance to MRT (BSD MRT), with easy access to major highways. Designed for urban living, Leverra features practical layouts, lifestyle facilities, and a growing community environment.\n\nSuitable for own stay, young professionals, and investors looking for future growth in a rapidly developing area.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "leverra_poster_finalA.png",
+      "masterplan_final_leverra.png",
+      "night_lifestyle_DA_leverra_kenneth.png",
+      "easyaccess_leverra_kenneth.png",
+      "senses_park_leverra.png",
+      "50m_swimming_pool_leverra_kenneth.png",
+      "lifestyle_facility_leverra.png",
+      "lush_garden_leverra.png",
+      "mrt_walkway_leverra.png",
+      "skyline_leverra.png",
+      "typeA_leverra.png",
+      "typbB_leverra.png",
+      "typeC_leverra.png",
+      "floorplan_leverra.png"
+    ],
+    "privateNotes": "Project group",
+    "status": "Available"
+  },
+  {
+    "id": 1773929534795,
+    "type": "listing",
+    "category": "Industrial",
+    "title": "Factory",
+    "location": "Sungai Buloh",
+    "price": "For rent : RM1.6 per sqft",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "7000 sqft per unit , total 3 unit",
+    "furnishing": "-",
+    "tenure": "Leasehold",
+    "description": "Industrial factory units in Sungai Buloh.\n\n3 units available | 7,000 sqft each  \nSuitable for factory, warehouse, or storage use.\n\nGood accessibility for logistics and transportation.\n\nIdeal for own use or investment.\n\nAsking RM1.60 psf.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "SungaiBulohFactoryNo2.png"
+    ],
+    "privateNotes": "mummy llisting",
+    "status": "Available"
+  },
+  {
+    "id": 1773929269996,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Semi-D Corner Bungalow",
+    "location": "Bukit Rahman Putra (BRP5), Sungai Buloh",
+    "price": "For Sale : RM2.5mil",
+    "rooms": "7+1",
+    "bathrooms": "6",
+    "builtup": "8000 sqft",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "Corner semi-D bungalow located in BRP5, Bukit Rahman Putra.\n\nSpacious 8,000 sqft land with 7+1 bedrooms and 6 bathrooms.\nSuitable for large families or investment.\n\nWell maintained condition with ample parking space.\n\nAsking RM2.5M (negotiable).",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Bukit_Rahman_Putra_no1 (11).jpeg",
+      "Bukit_Rahman_Putra_no1 (13).jpeg",
+      "Bukit_Rahman_Putra_no1 (1).jpeg",
+      "Bukit_Rahman_Putra_no1 (2).jpeg",
+      "Bukit_Rahman_Putra_no1 (3).jpeg",
+      "Bukit_Rahman_Putra_no1 (4).jpeg",
+      "Bukit_Rahman_Putra_no1 (5).jpeg",
+      "Bukit_Rahman_Putra_no1 (6).jpeg",
+      "Bukit_Rahman_Putra_no1 (7).jpeg",
+      "Bukit_Rahman_Putra_no1 (8).jpeg",
+      "Bukit_Rahman_Putra_no1 (9).jpeg",
+      "Bukit_Rahman_Putra_no1 (10).jpeg",
+      "Bukit_Rahman_Putra_no1 (12).jpeg"
+    ],
+    "privateNotes": "Mummy listing",
+    "status": "Available"
+  },
+  {
+    "id": 1773912979268,
+    "type": "asking",
+    "title": "3 Student studying at APU looking to rent together",
+    "location": "Bukit Jalil close to APU university",
+    "price": "RM 2,000/month",
+    "area": "Bukit Jalil , Kuala Lumpur",
+    "description": "student studying at APU just started their Bachelor degree, for 2-3 years long term stay. Looking to sign for 1 year tenancy and will very much willing to continue renting until graduate if suitable",
+    "whatsapp": "60166287357",
+    "privateNotes": "Jay",
+    "status": "Available"
+  },
+  {
+    "id": 1773912587729,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Endah Ria Apartment",
+    "location": "Bukit Jalil, Kuala Lumpur",
+    "price": "For Rent : RM1,900",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "1000 sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "-",
+    "description": "3 Bedrooms  \n2 Bathrooms  \nFully furnished unit  \n\nRental: RM1,900/month  \n\nLocated at Endah Ria, Bukit Jalil, with excellent accessibility and convenience.\n\nOnly 6 minutes cycling distance to LRT Bukit Jalil, making it ideal for daily commuting.\n\nUnit comes fully furnished and ready for immediate move-in.\n\nSuitable for:\n• Students  \n• Working professionals  \n• Families  \n\nSurrounded by nearby amenities including shops, eateries, and daily conveniences.\n\nComfortable living environment with good connectivity to major roads and public transport.\n\nCo-agency welcome.",
+    "whatsapp": "0166287357",
+    "photos": [
+      "EndahRiaNo1 (5).jpeg",
+      "EndahRiaNo1 (1).jpeg",
+      "EndahRiaNo1 (2).jpeg",
+      "EndahRiaNo1 (3).jpeg",
+      "EndahRiaNo1 (4).jpeg",
+      "EndahRiaNo1 (6).jpeg",
+      "EndahRiaNo1 (7).jpeg",
+      "EndahRiaNo1 (8).jpeg"
+    ],
+    "privateNotes": "endah Ria (1)\n+60 17-277 1300",
+    "status": "Available"
+  },
+  {
+    "id": 1773911871818,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "The Core - Office Unit ",
+    "location": "Kota Damansara, Selangor",
+    "price": "For Sale : RM340,000 ",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "538 sqft",
+    "furnishing": "Partially Furnished",
+    "tenure": "Leasehold (Bumi Lot)",
+    "description": "Built-up: 538 sqft  \n1st floor unit with lift access  \nLeasehold (Bumi Lot)  \nSecurity access card  \nShared toilet  \n\nPrime location in Kota Damansara, surrounded by apartments, offices, eateries, clinics and retail shops.\n\nOnly 300m to MRT Kota Damansara  \nEasy access to NKVE, DASH & LDP highways  \n\nSelling Price: RM340,000 (Negotiable)  \n\nOwner motivated to sell – serious offers welcome  \n\nTenancy Info:\n• Current tenant until end of April 2026  \n• If tenant does not renew, owner willing to rent at RM1,200/month  \n\nSuitable for own business or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "KotaDamansaraNo1 (4).jpeg",
+      "KotaDamansaraNo1 (5).jpeg",
+      "KotaDamansaraNo1 (6).jpeg",
+      "KotaDamansaraNo1 (2).jpeg",
+      "KotaDamansaraNo1 (3).jpeg",
+      "KotaDamansaraNo1 (1).jpeg"
+    ],
+    "privateNotes": "Rafi Commercial unit Kota Damansara(1)\n+60 13-340 3028",
+    "status": "Available"
+  },
+  {
+    "id": 1773911091378,
+    "type": "listing",
+    "category": "Industrial",
+    "title": "2-Storey Industrial Shoplot",
+    "location": "Kepong, Kuala Lumpur",
+    "price": "For Sale : RM1.7Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1,600 sqft",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "Property Type: 2-Storey Industrial Shoplot  \nBuilt-up: 1,600 sqft  \n\nCurrent Status: Tenanted  \nRental Income: RM4,400/month  \nTenancy expiry: 30 October 2026  \n\nSelling Price: RM1,700,000  \n\nSuitable for:\n• Light factory / workshop  \n• Warehouse / storage  \n• Office with operational space  \n• Small manufacturing business  \n\nIncome-generating property with existing tenant, suitable for investment or future own use.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "KepongShoplotNo1.jpg"
+    ],
+    "privateNotes": ".. Tsumori ..1.7Million kepong shop lot @Taman Perindustrian Ehsan Jaya(1)\n+60 10-969 6819",
+    "status": "Available"
+  },
+  {
+    "id": 1773910404389,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Putra Walk",
+    "location": "Seri Kembangan, Selangor",
+    "price": "For Sale : RM950,000",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "2,800 sqft (20 x 70, Ground + First Floor)",
+    "furnishing": "-",
+    "tenure": "Leasehold",
+    "description": "Location: Putra Walk @ Seri Kembangan  \nProperty Type: 2-Storey Commercial Shop Lot  \nSize: 20 x 70 (Ground Floor + First Floor)  \nBuilt-up approx. 2,800 sqft  \n\nSuitable for:\n• F&B  \n• Retail  \n• Office  \n• Tuition Centre  \n• Beauty Studio  \n• Service Centre  \n\nSelling Price: RM950,000 (Negotiable)  \n\nAlso available for rent (separate levels):\n• Ground Floor: RM3,000/month  \n• First Floor: RM1,250/month  \n\nFlexible usage and layout, suitable for own business or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "PutraWalkNo1.jpg"
+    ],
+    "privateNotes": "Vrs Pets Shop @Putra Walk(1) seri Kembangan for sale and rent\n+60 19-790 3601",
+    "status": "Available"
+  },
+  {
+    "id": 1773910107922,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Mercu Jalil",
+    "location": "Bukit Jalil, Kuala Lumpur",
+    "price": "For Rent : RM2,300/month",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "1,000 sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "Leasehold",
+    "description": "Built-up: 1,000 sqft  \n3 Bedrooms  \n2 Bathrooms  \nFully furnished  \n2 Car Parks  \nAir conditioning installed  \n\nAvailable from 15 May 2026  \n\nFacilities:\n• Playground  \n• Park  \n• Multipurpose hall  \n• 24-hour security  \n• Convenience store within residence  \n\nPrime location with everything within reach:\n\n• Tzu Chi International School – 60m (walking distance)  \n• Alam Sutera LRT Station – 1km  \n• Pavilion Bukit Jalil – 4km  \n• Bukit Jalil Recreational Park – 3.5km  \n• Giant Bandar Kinrara – 4km  \n• International Medical University (IMU) – 5km  \n\nRental: RM2,300/month  \n\nSuitable for families, students or working professionals.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Mercu_jalil_no1 (1).jpeg",
+      "Mercu_jalil_no1 (2).jpeg",
+      "Mercu_jalil_no1 (3).jpeg",
+      "Mercu_jalil_no1 (4).jpeg",
+      "Mercu_jalil_no1 (5).jpeg",
+      "Mercu_jalil_no1 (6).jpeg",
+      "Mercu_jalil_no1 (7).jpeg",
+      "Mercu_jalil_no1 (8).jpeg"
+    ],
+    "privateNotes": "Pei Yi Mercu Jalil mudah\n+60 16-940 3183",
+    "status": "Available"
+  },
+  {
+    "id": 1773909605849,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Seria 88 - Commercial 4 storey shoplot",
+    "location": "Bandar Setia Alam, Selangor",
+    "price": "For Sale : RM5 mil (negoatiable) ",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "30 x 70 (Multi-floor building)",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "Location: Seria 88, Bandar Setia Alam  \nProperty Type: 4-Storey Shop Office  \nLand Size: 30 x 70  \n\nLayout:\n• Ground Floor – 2,310 sqft  \n• 1st Floor – 2,564 sqft  \n• 2nd Floor – 2,564 sqft  \n• 3rd Floor – 2,564 sqft  \n• Lift access available  \n• Block D4  \n\nTenure: Freehold  \n\nHighlights:\n• Facing main road with high visibility  \n• Located in established Setia Alam commercial hub  \n• Surrounded by residential developments with strong customer flow  \n• Suitable for office, showroom, retail or investment  \n\nPrice: To be offered  \n\nSuitable for own business or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Seria88No1 (4).jpeg",
+      "Seria88No1 (1).jpeg",
+      "Seria88No1 (2).jpeg",
+      "Seria88No1 (3).jpeg"
+    ],
+    "privateNotes": "Wendy Wong @seria 88 Setia Alam (1)\n+60 19-222 2020",
+    "status": "Available"
+  },
+  {
+    "id": 1773909301643,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Summit USJ Mall",
+    "location": "Subang Jaya, Selangor ",
+    "price": "Sale Price : RM1,100,000",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "700 sqft",
+    "furnishing": "-",
+    "tenure": "Freehold (Non-Bumi Lot)",
+    "description": "Location: Summit USJ Mall, Subang Jaya  \nBuilt-up: 700 sqft  \nProperty Type: Commercial Shop Lot  \nGround floor unit  \nFacing main mall entrance  \n\nTenure: Freehold (Non-Bumi Lot)  \n\nHighlights:\n• Prime retail position with strong visibility  \n• High foot traffic from mall visitors  \n• Suitable for retail, F&B or service business  \n• Located in established commercial area in USJ  \n• Good investment opportunity  \n\nSelling Price: RM1,100,000  \nBank Value: RM1,300,000  \n\nSuitable for own business or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "SummitUSJNo1 (1).jpeg",
+      "SummitUSJNo1 (2).jpeg",
+      "SummitUSJNo1 (3).jpeg",
+      "SummitUSJNo1 (4).jpeg"
+    ],
+    "privateNotes": "Alexis King @USJ NSK summit USJ(1) mall ground floor commercial\n+60 11-2001 1211",
+    "status": "Available"
+  },
+  {
+    "id": 1773903222862,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "SetiaWalk - Commercial Office",
+    "location": "Puchong, Selangor ",
+    "price": "For Sale : RM800,000 , For Rent : RM3,100/month",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1,705 sqft",
+    "furnishing": "Partially Furnished",
+    "tenure": "Freehold",
+    "description": "Located in the vibrant SetiaWalk commercial hub, this spacious office unit offers an excellent working environment suitable for companies, startups, agencies and professional businesses.\n\nSurrounded by retail outlets, restaurants, banks and daily amenities, providing convenience for both staff and clients.\n\nProperty Details:\n• Project: SetiaWalk  \n• Property Type: Commercial Office  \n• Built-up: 1,705 sqft  \n• Condition: Partially furnished  \n\nMonthly Rent: RM3,100  \nSelling Price: RM800,000  \n\nStrategic location with strong business exposure and accessibility.\n\nSuitable for own use or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "SetiaWalkNo1 (11).jpeg",
+      "SetiaWalkNo1 (1).jpeg",
+      "SetiaWalkNo1 (2).jpeg",
+      "SetiaWalkNo1 (3).jpeg",
+      "SetiaWalkNo1 (4).jpeg",
+      "SetiaWalkNo1 (5).jpeg",
+      "SetiaWalkNo1 (6).jpeg",
+      "SetiaWalkNo1 (7).jpeg",
+      "SetiaWalkNo1 (8).jpeg",
+      "SetiaWalkNo1 (9).jpeg",
+      "SetiaWalkNo1 (10).jpeg"
+    ],
+    "privateNotes": "Account Acestar Commercial @setiawalk (1)\n+60 19-335 6788",
+    "status": "Available"
+  },
+  {
+    "id": 1773902853251,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Unio Residence",
+    "location": "Kepong, Kuala Lumpur",
+    "price": "For Sale : RM550,000",
+    "rooms": "2",
+    "bathrooms": "2",
+    "builtup": "866 sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "Leasehold",
+    "description": "Project: Unio Residence  \nBuilt-up: 866 sqft  \n2 Bedrooms  \n2 Bathrooms  \nHigh floor unit  \nNorth-facing with balcony  \n1 covered car park  \n\nFully furnished and move-in condition  \n\nHighlights:\n• High floor with good view and natural light  \n• Balcony for outdoor space  \n• Fully furnished unit  \n• Close to retail shops, restaurants and shopping areas  \n• Convenient access to major roads and nearby amenities  \n\nSelling Price: RM550,000  \n\nSuitable for own stay or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Unio_No1 (1).jpeg",
+      "Unio_No1 (2).jpeg",
+      "Unio_No1 (3).jpeg",
+      "Unio_No1 (4).jpeg",
+      "Unio_No1 (5).jpeg",
+      "Unio_No1 (6).jpeg",
+      "Unio_No1 (7).jpeg"
+    ],
+    "privateNotes": "Azli @unio residence(1) for sale 550k\n+60 12-317 4264",
+    "status": "Available"
+  },
+  {
+    "id": 1773902473891,
+    "type": "listing",
+    "category": "Residential",
+    "title": "M Luna apartment - Lake View",
+    "location": "Kepong, Kuala Lumpur",
+    "price": "For Sale : RM950,000",
+    "rooms": "4",
+    "bathrooms": "2",
+    "builtup": "1,000 sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "Leasehold (Non-Bumi Lot)",
+    "description": "Project: M Luna  \nBuilt-up: 1,000 sqft  \n4 Bedrooms  \n2 Bathrooms  \n2 Car Parks  \nHigh floor  \n\nLeasehold (Non-Bumi Lot)  \n\nHighlights:\n• Spacious layout suitable for families  \n• Located next to Kepong Metropolitan Lake Garden  \n• Newly completed development (2024)  \n• Full facilities including swimming pool, gym, jogging track & clubhouse  \n• Convenient access to Kepong, Desa ParkCity and major highways  \n\nSelling Price: RM950,000  \n\nSuitable for own stay or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "No2_M_Luna (9).jpeg",
+      "No2_M_Luna (1).jpeg",
+      "No2_M_Luna (2).jpeg",
+      "No2_M_Luna (3).jpeg",
+      "No2_M_Luna (4).jpeg",
+      "No2_M_Luna (5).jpeg",
+      "No2_M_Luna (6).jpeg",
+      "No2_M_Luna (7).jpeg",
+      "No2_M_Luna (8).jpeg"
+    ],
+    "privateNotes": "MTS @M Luna(2)\n+60 19-385 8186",
+    "status": "Available"
+  },
+  {
+    "id": 1773902142249,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Taman Usaha Jaya - 2 storey terrace house",
+    "location": "Taman Usaha Jaya, Kepong, Kuala Lumpur",
+    "price": "For Sale : RM500,000",
+    "rooms": "5",
+    "bathrooms": "3",
+    "builtup": "15 x 60 (Land: 1,915 sqft)",
+    "furnishing": "Renovation in progress",
+    "tenure": "Leasehold (Approx. 75 years remaining)",
+    "description": "Property Type: 2-Storey Terrace House  \nLand Size: 1,915 sqft  \nBuilt-up: 15 x 60  \n5 Bedrooms  \n3 Bathrooms  \nCorner lot with extra land  \n\nCondition: Renovation in progress  \n\nTenure: Leasehold (approx. 75 years remaining)  \nNon-Bumi Lot  \n\nSelling Price: RM500,000 (last price)  \n\nLocated in Taman Usaha Jaya, Kepong, with convenient access to nearby amenities, shops and major roads.\n\nSuitable for own stay or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "TamanUsahaJayaNo1 (4).jpeg",
+      "TamanUsahaJayaNo1 (1).jpeg",
+      "TamanUsahaJayaNo1 (2).jpeg",
+      "TamanUsahaJayaNo1 (3).jpeg",
+      "TamanUsahaJayaNo1 (5).jpeg"
+    ],
+    "privateNotes": "Mizan @M Luna(1) for sale 600k & Taman Usaha jaya\n+60 17-608 4776",
+    "status": "Available"
+  },
+  {
+    "id": 1773901261965,
+    "type": "listing",
+    "category": "Residential",
+    "title": "M Luna apartment - corner unit - Lake view",
+    "location": "Kiara Bay, Kepong",
+    "price": "For Sale : RM600,000",
+    "rooms": "4",
+    "bathrooms": "2",
+    "builtup": "1,000 sqft",
+    "furnishing": "-",
+    "tenure": "Leasehold (99 years, Non-Bumi Lot)",
+    "description": "Project: M Luna @ Kiara Bay  \nBuilt-up: 1,000 sqft  \n4 Bedrooms  \n2 Bathrooms  \n2 Car Parks  \nCompletion Year: 2024  \n\nFacilities include:\n• Swimming pool  \n• Gymnasium  \n• Playground  \n• Sauna  \n• Barbecue area  \n• Jogging track  \n• Multipurpose hall  \n• Clubhouse  \n• 24-hour security & lift access  \n\nStrategically located in Kepong with easy access to surrounding amenities, major roads and city connectivity.\n\nSuitable for own stay or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "No1M_Luna (8).jpeg",
+      "No1M_Luna (1).jpeg",
+      "No1M_Luna (2).jpeg",
+      "No1M_Luna (3).jpeg",
+      "No1M_Luna (4).jpeg",
+      "No1M_Luna (5).jpeg",
+      "No1M_Luna (6).jpeg",
+      "No1M_Luna (7).jpeg",
+      "No1M_Luna (9).jpeg",
+      "No1M_Luna (10).jpeg",
+      "No1M_Luna (11).jpeg",
+      "No1M_Luna (12).jpeg"
+    ],
+    "privateNotes": "Mizan @M Luna(1) for sale 600k & Taman Usaha jaya +60 17-608 4776",
+    "status": "Available"
+  },
+  {
+    "id": 1773900640367,
+    "type": "listing",
+    "category": "Residential",
+    "title": "The Henge",
+    "location": "Kepong, Kuala Lumpur",
+    "price": "For Sale : RM 490,000",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "1,100 sqft",
+    "furnishing": "Semi Furnished",
+    "tenure": "Leasehold (Approx. 92 years remaining)",
+    "description": "Located next to Kepong Metropolitan Lake Garden, offering a peaceful environment with greenery views while still enjoying the convenience of city living.\n\nProject: The Henge  \nBuilt-up: 1,100 sqft  \n3 Bedrooms  \n2 Bathrooms  \n2 side-by-side car parks  \nSemi furnished  \n\nMaintenance fee approx. RM319/month  \n\nHighlights:\n• Walking distance to Kepong Metropolitan Lake Garden  \n• Spacious layout suitable for families  \n• Side-by-side car parks for convenience  \n• Quiet residential environment  \n• Easy access to nearby amenities  \n\nSelling Price: RM498,000  \n\nSuitable for own stay or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "The_Henge_No1 (1).jpeg",
+      "The_Henge_No1 (2).jpeg",
+      "The_Henge_No1 (3).jpeg",
+      "The_Henge_No1 (4).jpeg",
+      "The_Henge_No1 (5).jpeg",
+      "The_Henge_No1 (6).jpeg"
+    ],
+    "privateNotes": "mummy listing",
+    "status": "Available"
+  },
+  {
+    "id": 1773900347893,
+    "type": "asking",
+    "title": "Apartment rental (need 3 units)",
+    "location": "Residensi Ava",
+    "price": "RM2500/month",
+    "area": "Kiara Bay, Kepong",
+    "description": "Looking for a suitable rental unit.\n\n1.Tenant profile:\n• Malaysian Chinese  \n• 5 persons staying  \n• No pets  \n• Working in beauty / aesthetic industry  \n\n2.Tenant profile:\n\n3.Tenant profile:\n\nRequirements:\n• Prefer partially furnished unit  \n\nMove-in date: Immediately\nBudget: RM2,500 and above\n\nKindly contact if you have a suitable unit to match.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "privateNotes": "mummy client",
+    "status": "Available"
+  },
+  {
+    "id": 1773898981565,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Bandar Sri Damansara - 2 Storey Terrace House ",
+    "location": "Bandar Sri Damansara, Kuala Lumpur",
+    "price": "For Rent : RM2,500/month",
+    "rooms": "4",
+    "bathrooms": "2",
+    "builtup": "1700 sqft",
+    "furnishing": "Partially Furnished",
+    "tenure": "Freehold",
+    "description": "Built-up approx. 3,500 sqft  \n4 Bedrooms  \n3 Bathrooms  \n2-storey terraced house  \nPartially furnished  \n\nRental: RM2,500/month  \n\nLocated in Bandar Sri Damansara, close to:\n• Sri Damansara Shoplots & Commercial Area  \n• Kepong & Desa ParkCity  \n• Schools, restaurants & daily amenities  \n• MRR2 & LDP Highway access  \n\nSuitable for families looking for a spacious landed home in a mature neighbourhood.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "SriDamansaraNo4 (1).jpeg",
+      "SriDamansaraNo4 (2).jpeg",
+      "SriDamansaraNo4 (3).jpeg",
+      "SriDamansaraNo4 (4).jpeg",
+      "SriDamansaraNo4 (5).jpeg",
+      "SriDamansaraNo4 (6).jpeg",
+      "SriDamansaraNo4 (7).jpeg",
+      "SriDamansaraNo4 (8).jpeg",
+      "SriDamansaraNo4 (9).jpeg",
+      "SriDamansaraNo4 (10).jpeg",
+      "SriDamansaraNo4 (11).jpeg",
+      "SriDamansaraNo4 (12).jpeg",
+      "SriDamansaraNo4 (13).jpeg",
+      "SriDamansaraNo4 (14).jpeg",
+      "SriDamansaraNo4 (15).jpeg"
+    ],
+    "privateNotes": "mummy with other tenant but i found it \nSamantha Sri damansara(4)\n+60 17-224 1019",
+    "status": "Available"
+  },
+  {
+    "id": 1773898469164,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Gambira Residence",
+    "location": "Kuchai Lama, Kuala Lumpur",
+    "price": "For Sale : RM890,000",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "1,168 sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "Freehold (Strata Title)",
+    "description": "Built-up: 1,168 sqft  \n3 Bedrooms  \n2 Bathrooms  \nMid-low floor  \n2 side-by-side parking bays (under own unit, near lift)  \n\nMaintenance fee approx. RM300/month  \n\nUnit Features:\n• 5 Air-conditioners  \n• 4 Ceiling fans  \n• 2 Water heaters  \n• Full tiled kitchen with cooktop, hob & exhaust fan  \n• Dry & wet kitchen separated  \n• Fridge, built-in oven & microwave  \n• Washing machine  \n• 3 Beds (1 king, 1 queen, 1 single)  \n• Built-in wardrobes  \n• Dining table & chairs  \n• Sofa set  \n• TV with built-in TV cabinet  \n• Full curtains  \n• Built-in shoe cabinet  \n\nSelling Price: RM890,000  \n\nLocated in Kuchai, close to:\n• Old Klang Road  \n• Mid Valley / KL Eco City  \n• Sri Petaling & Bukit Jalil  \n• Major highways & surrounding amenities  \n\nSame block as gym & swimming pool with convenient access  \n\nSuitable for own stay or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Gambira_residence_no1 (1).jpeg",
+      "Gambira_residence_no1 (2).jpeg",
+      "Gambira_residence_no1 (3).jpeg",
+      "Gambira_residence_no1 (4).jpeg",
+      "Gambira_residence_no1 (5).jpeg",
+      "Gambira_residence_no1 (6).jpeg",
+      "Gambira_residence_no1 (7).jpeg",
+      "Gambira_residence_no1 (8).jpeg",
+      "Gambira_residence_no1 (9).jpeg",
+      "Gambira_residence_no1 (10).jpeg",
+      "Gambira_residence_no1 (11).jpeg",
+      "Gambira_residence_no1 (12).jpeg"
+    ],
+    "privateNotes": "KHJ @The Henge(2) @Abadi Indah 1 @Gembira residence(1)\n+60 16-866 0611",
+    "status": "Available"
+  },
+  {
+    "id": 1773897846223,
+    "type": "listing",
+    "category": "Residential",
+    "title": "The Henge",
+    "location": "Kepong, Kuala Lumpur",
+    "price": "For Sale : RM640,000 , For Rent : RM2,500/month",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "1,100 sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "Leasehold (Strata Title, MOT in process)",
+    "description": "Built-up: 1,100 sqft  \n3 Bedrooms  \n2 Bathrooms  \nMid-low floor (near lift)  \n2 side-by-side parking bays  \n\nMaintenance fee approx. RM320/month  \n\nUnit Features:\n• Beautiful lake, greenery & park view  \n• 4 Air-conditioners  \n• 2 Water heaters  \n• Full kitchen with cooking hob & exhaust fan  \n• Dry & wet kitchen cabinets + shoe cabinet  \n• Fridge  \n• Washing machine  \n• TV & TV console  \n• Sofa set  \n• Dining table with 6 chairs  \n• 3 Beds (1 double, 2 single)  \n• Wardrobe  \n• Full lighting & curtains  \n\nSelling Price: RM640,000  \nRental: RM2,500/month  \n\nAvailable for rent from 1 April 2026 onwards  \n\nLocated in Kepong, close to:\n• Kepong Metropolitan Lake Garden  \n• Desa ParkCity  \n• Metro Prima & AEON Metro Prima  \n• MRR2 & DUKE Highway  \n\nSuitable for own stay or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "No2_The_henge (1).jpeg",
+      "No2_The_henge (28).jpeg",
+      "No2_The_henge (2).jpeg",
+      "No2_The_henge (3).jpeg",
+      "No2_The_henge (4).jpeg",
+      "No2_The_henge (5).jpeg",
+      "No2_The_henge (6).jpeg",
+      "No2_The_henge (7).jpeg",
+      "No2_The_henge (8).jpeg",
+      "No2_The_henge (9).jpeg",
+      "No2_The_henge (10).jpeg",
+      "No2_The_henge (11).jpeg",
+      "No2_The_henge (12).jpeg",
+      "No2_The_henge (13).jpeg",
+      "No2_The_henge (14).jpeg",
+      "No2_The_henge (15).jpeg",
+      "No2_The_henge (16).jpeg",
+      "No2_The_henge (17).jpeg",
+      "No2_The_henge (18).jpeg",
+      "No2_The_henge (19).jpeg",
+      "No2_The_henge (20).jpeg",
+      "No2_The_henge (21).jpeg",
+      "No2_The_henge (22).jpeg",
+      "No2_The_henge (23).jpeg",
+      "No2_The_henge (24).jpeg",
+      "No2_The_henge (25).jpeg",
+      "No2_The_henge (26).jpeg",
+      "No2_The_henge (27).jpeg"
+    ],
+    "privateNotes": "KHJ @The Henge(2) @Abadi Indah 1 @Gembira residence(1)\n+60 16-866 0611",
+    "status": "Available"
+  },
+  {
+    "id": 1773897327056,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Abadi Indah",
+    "location": "Taman Desa, Kuala Lumpur (Near Cheras)",
+    "price": "For Sale : RM340,000",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "900 sqft",
+    "furnishing": "Partly Furnished",
+    "tenure": "Leasehold (Strata Title)",
+    "description": "Built-up approx. 900 sqft  \n3 Bedrooms  \n2 Bathrooms  \nStrata Title  \n1 Parking Bay  \nMaintenance fee approx. RM200/month  \n\nUnit includes:\n• 2 Air-conditioners  \n• 4 Ceiling Fans  \n• 2 Water Heaters  \n• 2-door Refrigerator  \n• Washing Machine  \n• Lighting installed  \n\nLocated in Taman Desa, close to:\n• Cheras  \n• Mid Valley / Bangsar area  \n• KL City Centre (approx. 7km to KLCC)  \n• Major highways & surrounding amenities  \n\nIdeal for first-time buyers, small families or investors.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Abadi_Indah1 (1).jpeg",
+      "Abadi_Indah1 (2).jpeg",
+      "Abadi_Indah1 (3).jpeg",
+      "Abadi_Indah1 (4).jpeg",
+      "Abadi_Indah1 (5).jpeg",
+      "Abadi_Indah1 (6).jpeg",
+      "Abadi_Indah1 (7).jpeg",
+      "Abadi_Indah1 (8).jpeg",
+      "Abadi_Indah1 (9).jpeg",
+      "Abadi_Indah1 (10).jpeg"
+    ],
+    "privateNotes": "KHJ @The Henge(2) @Abadi Indah 1 @Gembira residence(1)\n+60 16-866 0611",
+    "status": "Available"
+  },
+  {
+    "id": 1773894737531,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Sri Damansara 2 Storey Terrace",
+    "location": "Sri Damansara, Kuala Lumpur",
+    "price": "For Sale : RM1.5 Mil , For Rent : RM2,800/month",
+    "rooms": "3+1",
+    "bathrooms": "3",
+    "builtup": "1650 sqft",
+    "furnishing": "Partly Furnished",
+    "tenure": "Freehold",
+    "description": "Spacious 2-storey terrace located in a mature Sri Damansara neighbourhood.\n\nProperty Features:\n• Spacious living room  \n• Large dining area & kitchen  \n• 1 study room on ground floor (convertible to bedroom)  \n• 1 bathroom on ground floor  \n\nUpstairs Layout:\n• 3 Bedrooms  \n• Master bedroom with fully tiled ensuite bathroom  \n• 1 shared tiled bathroom  \n• Built-in wardrobes in bedrooms  \n• Small upstairs common space  \n\nFully tiled flooring throughout the house  \n\nLocated in a mature neighbourhood close to amenities, schools, restaurants and conveniences.\n\nSuitable for own stay or rental investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "SD10No1 (1).jpeg",
+      "SD10No1 (2).jpeg",
+      "SD10No1 (3).jpeg",
+      "SD10No1 (4).jpeg",
+      "SD10No1 (5).jpeg",
+      "SD10No1 (6).jpeg",
+      "SD10No1 (7).jpeg",
+      "SD10No1 (8).jpeg",
+      "SD10No1 (9).jpeg",
+      "SD10No1 (10).jpeg",
+      "SD10No1 (11).jpeg",
+      "SD10No1 (12).jpeg"
+    ],
+    "privateNotes": "Mummy auntie friend",
+    "status": "Available"
+  },
+  {
+    "id": 1773893951166,
+    "type": "listing",
+    "category": "New Project",
+    "title": "Emhub @Bukit Raja Commercial unit",
+    "location": "Klang, Selangor",
+    "price": "Rm 150 - 200 psf",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "2196 sqft - 5088 sqft",
+    "furnishing": "-",
+    "tenure": "leasehold",
+    "description": "Unique concept unit with dual functionality – suitable for both commercial and office use.\n\nDirect “drive-up” convenience allows easy access right to your unit, ideal for business operations, loading or quick drop-offs.\n\nComes with 2 car park spaces directly in front of the unit, providing rare convenience for both owners and customers.\n\nFlexible layout suitable for office, retail, showroom or small business setup.\n\nSales Gallery Now at Kota Damansara \n\nCurrent selling new built duplicated layout at Bukit Raja, Klang",
+    "whatsapp": "60166287357",
+    "photos": [
+      "EmhubProject (1).jpeg",
+      "EmhubProject (2).jpeg",
+      "EmhubProject (3).jpeg",
+      "EmhubProject (4).jpeg",
+      "EmhubProject (5).jpeg",
+      "EmhubProject (6).jpeg",
+      "EmhubProject (7).jpeg",
+      "EmhubProject (8).jpeg",
+      "EmhubProject (9).jpeg",
+      "EmhubProject (10).jpeg",
+      "EmhubProject (11).jpeg",
+      "EmhubProject (12).jpeg",
+      "EmhubProject (13).jpeg",
+      "EmhubProject (14).jpeg",
+      "EmhubProject (15).jpeg",
+      "EmhubProject (16).jpeg",
+      "EmhubProject (17).jpeg",
+      "EmhubProject (18).jpeg",
+      "EmhubProject (19).jpeg",
+      "EmhubProject (20).jpeg",
+      "EmhubProject (21).jpeg",
+      "EmhubProject (22).jpeg"
+    ],
+    "privateNotes": "company project Emhub  @ bukit raja",
+    "status": "Available"
+  },
+  {
+    "id": 1773892656321,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Bandar Sri Damansara - End Lot 2 storey Terrace",
+    "location": "Sri Damansara, Kuala Lumpur",
+    "price": "For Sale : RM1.2Mil , For Rent : RM2,500/month",
+    "rooms": "4",
+    "bathrooms": "3",
+    "builtup": "1800 sqft",
+    "furnishing": "Empty unit",
+    "tenure": "Freehold",
+    "description": "Prime Sri Damansara location  \nWalking distance to restaurants, groceries & retail  \n\nSelling Price: RM1.2M  \nRental: RM2,500/month  \n\nEnd lot / corner unit with nice open view  \n\nProperty Details:\n• 4 Bedrooms (1 downstairs, 3 upstairs)  \n• 3 Bathrooms  \n• High ceiling living hall with chandelier  \n• Dining area  \n• Closed kitchen with sliding door  \n• Small common space upstairs with ceiling fan  \n\nParking: 2 inside + 1 outside  \n\nChinese owner  \nPreviously tenanted for over 20 years continuously  \n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "No2SD8 (1).jpeg",
+      "No2SD8 (2).jpeg",
+      "No2SD8 (3).jpeg",
+      "No2SD8 (4).jpeg",
+      "No2SD8 (5).jpeg",
+      "No2SD8 (6).jpeg",
+      "No2SD8 (7).jpeg",
+      "No2SD8 (8).jpeg",
+      "No2SD8 (9).jpeg",
+      "No2SD8 (10).jpeg",
+      "No2SD8 (11).jpeg",
+      "No2SD8 (12).jpeg",
+      "No2SD8 (13).jpeg",
+      "No2SD8 (14).jpeg"
+    ],
+    "privateNotes": "sd 8 end lot",
+    "status": "Available"
+  },
+  {
+    "id": 1773892254532,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Bandar Sri Damansara - 2 storey Terrace",
+    "location": "Sri Damansara, Kuala Lumpur",
+    "price": "For Sale : RM1.2Mil",
+    "rooms": "3b+1s",
+    "bathrooms": "3",
+    "builtup": "1650 sqft",
+    "furnishing": "Empty Unit",
+    "tenure": "Freehold Strata title",
+    "description": "North facing unit  \nLand size: 22 x 75  \n\nProperty Details:\n• 3 Bedrooms + 1 Study  \n• 3 Bathrooms  \n• 1 ground floor room  \n• 1 shared bathroom upstairs  \n• 1 master ensuite  \n\nParking: 2 inside + 1 outside  \n\nGated & guarded community  \nFront yard & backyard  \n\nWalking distance to school, restaurants, clinic & groceries  \n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "SD8No1 (1).jpeg",
+      "SD8No1 (2).jpeg",
+      "SD8No1 (3).jpeg",
+      "SD8No1 (4).jpeg",
+      "SD8No1 (5).jpeg",
+      "SD8No1 (6).jpeg",
+      "SD8No1 (7).jpeg",
+      "SD8No1 (8).jpeg",
+      "SD8No1 (9).jpeg",
+      "SD8No1 (10).jpeg",
+      "SD8No1 (11).jpeg",
+      "SD8No1 (12).jpeg",
+      "SD8No1 (13).jpeg",
+      "SD8No1 (14).jpeg",
+      "SD8No1 (15).jpeg",
+      "SD8No1 (16).jpeg",
+      "SD8No1 (17).jpeg",
+      "SD8No1 (18).jpeg"
+    ],
+    "privateNotes": "Mummy co broke end lot sd 12 I see myself at wohgei",
+    "status": "Available"
+  },
+  {
+    "id": 1773891614530,
+    "type": "listing",
+    "category": "Industrial",
+    "title": "Sungai Buloh Factory",
+    "location": "Sungai Buloh, Selangor",
+    "price": "For Rent : RM15,000/month",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "10,000 sqft",
+    "furnishing": "-",
+    "tenure": "-",
+    "description": "Power supply: 150 amps (TNB)\nTruck & container accessible\n\nRental: RM15,000/month (negotiable)\nAvailable from 1 April 2026\n\nSuitable for warehouse, storage or light industrial use.\n\nStrategic Sungai Buloh location with good accessibility.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "sungai_buloh1.jpeg"
+    ],
+    "privateNotes": "Co broke mummy",
+    "status": "Available"
+  },
+  {
+    "id": 1773888817373,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Westside One @ Desa ParkCity ",
+    "location": "Desa ParkCity, Kuala Lumpur",
+    "price": "For Rent : RM5,500/month",
+    "rooms": "3+1",
+    "bathrooms": "3",
+    "builtup": "1701 sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "Leasehold",
+    "description": "Available from 1 April 2026\nCurrently tenanted – viewing can be arranged\n\nLocated in Desa ParkCity, one of KL’s most sought-after lifestyle townships:\n• Beautiful lake park community\n• International school & hospital within the township\n• Strong expatriate community\n• Pet-friendly environment\n• High security & well-managed township\n\nClose to Waterfront & Arkaid – popular dining, retail & lifestyle hubs.\n\nCo-agency welcome",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Desapark1 (1).jpeg",
+      "Desapark1 (2).jpeg",
+      "Desapark1 (3).jpeg",
+      "Desapark1 (4).jpeg",
+      "Desapark1 (5).jpeg",
+      "Desapark1 (6).jpeg"
+    ],
+    "privateNotes": "Co broke with mummy ",
+    "status": "Available"
+  },
+  {
+    "id": 1773880488466,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "8trium - Front Facing shoplot",
+    "location": "Sri Damansara",
+    "price": "For Rent : RM2.90psf",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1495 sqft",
+    "furnishing": "-",
+    "tenure": "-",
+    "description": "Commercial Unit For Rent – Atrium Sri Damansara\n\nFront-facing unit with strong visibility and high exposure.\n\nDirect escalator access from the main entrance, suitable for retail, showroom or office use.\n\nRental Price: RM2.90 psf\n\nLocated in an established commercial hub with MRT nearby, loading bay facilities, cargo lift and ample multi-level parking.\n\nHigh exposure unit with strong walk-in potential.\n\nCo-agency welcome.\n\nFor details or viewing arrangement contact:\n\nKenneth Lai  \nReal Estate Negotiator  \nOne Maker Realty Group",
+    "whatsapp": "60166287357",
+    "photos": [
+      "8Trium1lot (1).jpeg",
+      "8Trium1lot (2).jpeg",
+      "8Trium1lot (3).jpeg",
+      "8Trium1lot (4).jpeg",
+      "8Trium1lot (5).jpeg",
+      "8Trium1lot (6).jpeg",
+      "8Trium1lot (7).jpeg",
+      "8Trium1lot (8).jpeg",
+      "8Trium1lot (9).jpeg",
+      "8Trium1lot (10).jpeg",
+      "8Trium1lot (11).jpeg"
+    ],
+    "privateNotes": "Co broke with mummy 8trium developer",
+    "status": "Available"
+  },
+  {
+    "id": 1773879543969,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "8trium - Rear Facing shoplot",
+    "location": "Sri Damansara",
+    "price": "For Rent : RM2.70psf",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1st lot @2047sqft ; 2nd lot @1978sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "-",
+    "description": "Commercial Unit For Rent – Atrium, Sri Damansara\n\nRear-facing unit with closest access to cargo lift, suitable for office, storage or backend operations.\n\nSizes available:\n• 2,047 sqft\n• 1,978 sqft\n\nSeparate units – can rent individually or together.\n\nRental Price: RM2.70 psf (Negotiable)\n\nLocated within an established commercial hub with loading bay facilities, multi-level parking and MRT nearby.\n\nStrategic location with convenient access around Sri Damansara.\n\nCo-agency welcome.\n\nFor details or viewing arrangement contact:\n\nKenneth Lai\nReal Estate Negotiator\nOne Maker Realty Group",
+    "whatsapp": "60166287357",
+    "photos": [
+      "8Trium2lot (1).jpeg",
+      "8Trium2lot (2).jpeg",
+      "8Trium2lot (3).jpeg",
+      "8Trium2lot (4).jpeg",
+      "8Trium2lot (5).jpeg",
+      "8Trium2lot (6).jpeg",
+      "8Trium2lot (7).jpeg",
+      "8Trium2lot (8).jpeg",
+      "8Trium2lot (9).jpeg",
+      "8Trium2lot (10).jpeg",
+      "8Trium2lot (11).jpeg",
+      "8Trium2lot (12).jpeg",
+      "8Trium2lot (13).jpeg",
+      "8Trium2lot (14).jpeg",
+      "8Trium2lot (15).jpeg",
+      "8Trium2lot (16).jpeg",
+      "8Trium2lot (17).jpeg",
+      "8Trium2lot (18).jpeg",
+      "8Trium2lot (19).jpeg",
+      "8Trium2lot (20).jpeg",
+      "8Trium2lot (21).jpeg",
+      "8Trium2lot (22).jpeg"
+    ],
+    "privateNotes": "Co broke with mummy 8trium developer",
+    "status": "Available"
+  },
+  {
+    "id": 1773877619191,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Residensi Ava @ Kiara Bay",
+    "location": "Kiara Bay / Kepong",
+    "price": "For Rent : RM 3,800/month",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "950 sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "-",
+    "description": "Condo For Rent – Residensi Ava @ Kiara Bay, Kepong\n\nProperty Details\n• Type B Layout\n• Built-up: 950 sqft\n• 3 Bedrooms\n• 2 Bathrooms\n• Fully Furnished\n• Extensively Renovated\n• Move-in Condition\n• Available from 10/04\n\nRental Price: RM3,800 / month (Negotiable)\n\nStrategic location in Kiara Bay, Kepong with easy access to:\n• Desa ParkCity\n• Metro Prima\n• MRR2 & DUKE Highway\n• AEON Metro Prima and surrounding amenities\n\nIdeal for families or working professionals.\n\nFor viewing arrangements contact:\n\nKenneth Lai  \nReal Estate Negotiator  \nOne Maker Realty Group",
+    "whatsapp": "60166287357",
+    "photos": [
+      "RA6 (18).jpeg",
+      "RA6 (1).jpeg",
+      "RA6 (2).jpeg",
+      "RA6 (3).jpeg",
+      "RA6 (4).jpeg",
+      "RA6 (5).jpeg",
+      "RA6 (6).jpeg",
+      "RA6 (7).jpeg",
+      "RA6 (8).jpeg",
+      "RA6 (9).jpeg",
+      "RA6 (10).jpeg",
+      "RA6 (11).jpeg",
+      "RA6 (12).jpeg",
+      "RA6 (13).jpeg",
+      "RA6 (14).jpeg",
+      "RA6 (15).jpeg",
+      "RA6 (16).jpeg",
+      "RA6 (17).jpeg"
+    ],
+    "privateNotes": "Michelle #A23-03-@Residensi Ava for rent (6) Teo , +60 12-680 4698",
+    "status": "Available"
+  },
+  {
+    "id": 1773876991951,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Residensi Ava @ Kiara Bay",
+    "location": "Kiara Bay / Kepong",
+    "price": "For Sale : RM 590,000",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "947 sqft",
+    "furnishing": "Partially Furnished",
+    "tenure": "Leasehold",
+    "description": "Condo For Sale – Residensi Ava @ Kiara Bay, Kepong\n\nProperty Details:\n• Built-up: 947 sqft\n• 3 Bedrooms\n• 2 Bathrooms\n• Leasehold\n\nHighlights:\n• Perfect KL city skyline view\n• Practical layout suitable for families\n• Located within the developing Kiara Bay township\n• Modern facilities including swimming pool, gymnasium and recreational areas\n• Easy access to Kepong, Desa ParkCity and major highways\n\nSelling Price: RM590,000 (Negotiable)\n\nSuitable for own stay or investment.\n\nFor viewing or more information contact:\n\nKenneth Lai  \nReal Estate Negotiator  \nOne Maker Realty Group",
+    "whatsapp": "60166287357",
+    "photos": [
+      "RA7 (1).jpeg",
+      "RA7 (2).jpeg",
+      "RA7 (3).jpeg",
+      "RA7 (4).jpeg",
+      "RA7 (5).jpeg",
+      "RA7 (6).jpeg",
+      "RA7 (7).jpeg"
+    ],
+    "privateNotes": "SWLim @residency ava (7) , +60 12-208 1990",
+    "status": "Available"
+  },
+  {
+    "id": 1773875829820,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Residensi Ava @ Kiara Bay",
+    "location": "Kiara Bay / Kepong",
+    "price": "For Sale : RM 850,000",
+    "rooms": "4",
+    "bathrooms": "2",
+    "builtup": "1285 sqft",
+    "furnishing": "Partially Furnished",
+    "tenure": "Leasehold",
+    "description": "Apartment For Sale – Residensi Ava @ Kiara Bay, Kepong\n\nSpacious layout unit available at Residensi Ava @ Kiara Bay, a modern lakeside development located near Kepong and Desa ParkCity with excellent connectivity and lifestyle amenities.\n\nProperty Details:\n• Built-up: 1,285 sqft\n• 4 Bedrooms\n• 2 Bathrooms\n• 2 Car Parks\n• Leasehold\n• Strata Title\n• Non-Bumi Lot\n• Vacant Unit\n\nSelling Price: RM850,000\n\nStrategic location with easy access to:\n• Desa ParkCity\n• Metro Prima\n• MRR2 & DUKE Highway\n• AEON Metro Prima\n• Nearby shops and restaurants\n\nSuitable for own stay or investment.\n\nContact for viewing arrangement.\n\nCo-agency welcome.\n\nKenneth Lai  \nReal Estate Negotiator  \nOne Maker Realty Group",
+    "whatsapp": "60166287357",
+    "photos": [
+      "RA3 (1).jpeg",
+      "RA3 (2).jpeg",
+      "RA3 (3).jpeg",
+      "RA3 (4).jpeg",
+      "RA3 (5).jpeg"
+    ],
+    "privateNotes": "Co broke with mummy",
+    "status": "Available"
+  },
+  {
+    "id": 1773875638456,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Residensi Ava @ Kiara Bay",
+    "location": "Kiara Bay / Kepong",
+    "price": "For Sale : RM 610,000",
+    "rooms": "2",
+    "bathrooms": "2",
+    "builtup": "813 sqft",
+    "furnishing": "Partially Furnished",
+    "tenure": "Leasehold",
+    "description": "Residensi Ava @ Kiara Bay Apartment – For Sale\n\nBuilt-up: 813 sqft\n\n• 2 Bedrooms\n• 2 Bathrooms\n• 2 Carparks\n• Partially Furnished\n• Facing Pool & Parking View\n\nTenure: Leasehold\nTitle: Strata Title\nLot Type: Bumi Lot\nUnit Status: Tenanted\n\nSelling Price: RM610,000\n\nStrategic location in Kiara Bay near Kepong with convenient access to major highways, retail and lifestyle amenities.\n\nNearby:\n• Kepong\n• Desa ParkCity\n• Metro Prima\n• MRR2 Highway\n• Easy access to KL city\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "RA2(1).jpeg",
+      "RA2(2).jpeg",
+      "RA2(3).jpeg",
+      "RA2(4).jpeg",
+      "RA2(5).jpeg",
+      "RA2(6).jpeg",
+      "RA2(7).jpeg",
+      "RA2(8).jpeg",
+      "RA2(9).jpeg",
+      "RA2(10).jpeg",
+      "RA2(11).jpeg",
+      "RA2(12).jpeg"
+    ],
+    "privateNotes": "#A-07-07-@Residensi Ava(2) for sale , +60 11-2549 3614",
+    "status": "Available"
+  }
+];
